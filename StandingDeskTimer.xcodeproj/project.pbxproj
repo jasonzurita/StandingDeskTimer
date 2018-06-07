@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1283E77720C9BC8400C5AD6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283E77620C9BC8400C5AD6D /* AppDelegate.swift */; };
+		1283E77B20C9BC8600C5AD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1283E77A20C9BC8600C5AD6D /* Assets.xcassets */; };
+		1283E77E20C9BC8600C5AD6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1283E77C20C9BC8600C5AD6D /* Main.storyboard */; };
+		1283E78720C9C74400C5AD6D /* TimerPopoverVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283E78620C9C74400C5AD6D /* TimerPopoverVc.swift */; };
+		1283E78920C9D2A300C5AD6D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283E78820C9D2A300C5AD6D /* EventMonitor.swift */; };
+		1283E78B20CAA5E800C5AD6D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283E78A20CAA5E800C5AD6D /* AppCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1283E77320C9BC8400C5AD6D /* StandingDeskTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandingDeskTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1283E77620C9BC8400C5AD6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1283E77A20C9BC8600C5AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1283E77D20C9BC8600C5AD6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1283E77F20C9BC8600C5AD6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1283E78020C9BC8600C5AD6D /* StandingDeskTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StandingDeskTimer.entitlements; sourceTree = "<group>"; };
+		1283E78620C9C74400C5AD6D /* TimerPopoverVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPopoverVc.swift; sourceTree = "<group>"; };
+		1283E78820C9D2A300C5AD6D /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		1283E78A20CAA5E800C5AD6D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1283E77020C9BC8400C5AD6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1283E76A20C9BC8400C5AD6D = {
+			isa = PBXGroup;
+			children = (
+				1283E77520C9BC8400C5AD6D /* StandingDeskTimer */,
+				1283E77420C9BC8400C5AD6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1283E77420C9BC8400C5AD6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1283E77320C9BC8400C5AD6D /* StandingDeskTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1283E77520C9BC8400C5AD6D /* StandingDeskTimer */ = {
+			isa = PBXGroup;
+			children = (
+				1283E77620C9BC8400C5AD6D /* AppDelegate.swift */,
+				1283E78A20CAA5E800C5AD6D /* AppCoordinator.swift */,
+				1283E78620C9C74400C5AD6D /* TimerPopoverVc.swift */,
+				1283E78820C9D2A300C5AD6D /* EventMonitor.swift */,
+				1283E77A20C9BC8600C5AD6D /* Assets.xcassets */,
+				1283E77C20C9BC8600C5AD6D /* Main.storyboard */,
+				1283E77F20C9BC8600C5AD6D /* Info.plist */,
+				1283E78020C9BC8600C5AD6D /* StandingDeskTimer.entitlements */,
+			);
+			path = StandingDeskTimer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1283E77220C9BC8400C5AD6D /* StandingDeskTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1283E78320C9BC8600C5AD6D /* Build configuration list for PBXNativeTarget "StandingDeskTimer" */;
+			buildPhases = (
+				1283E76F20C9BC8400C5AD6D /* Sources */,
+				1283E77020C9BC8400C5AD6D /* Frameworks */,
+				1283E77120C9BC8400C5AD6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StandingDeskTimer;
+			productName = StandingDeskTimer;
+			productReference = 1283E77320C9BC8400C5AD6D /* StandingDeskTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1283E76B20C9BC8400C5AD6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = zurita;
+				TargetAttributes = {
+					1283E77220C9BC8400C5AD6D = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = 1283E76E20C9BC8400C5AD6D /* Build configuration list for PBXProject "StandingDeskTimer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1283E76A20C9BC8400C5AD6D;
+			productRefGroup = 1283E77420C9BC8400C5AD6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1283E77220C9BC8400C5AD6D /* StandingDeskTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1283E77120C9BC8400C5AD6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1283E77B20C9BC8600C5AD6D /* Assets.xcassets in Resources */,
+				1283E77E20C9BC8600C5AD6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1283E76F20C9BC8400C5AD6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1283E78B20CAA5E800C5AD6D /* AppCoordinator.swift in Sources */,
+				1283E78920C9D2A300C5AD6D /* EventMonitor.swift in Sources */,
+				1283E77720C9BC8400C5AD6D /* AppDelegate.swift in Sources */,
+				1283E78720C9C74400C5AD6D /* TimerPopoverVc.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1283E77C20C9BC8600C5AD6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1283E77D20C9BC8600C5AD6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1283E78120C9BC8600C5AD6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1283E78220C9BC8600C5AD6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1283E78420C9BC8600C5AD6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StandingDeskTimer/StandingDeskTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = S64Z2T7FXA;
+				INFOPLIST_FILE = StandingDeskTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasonzurita.app.StandingDeskTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1283E78520C9BC8600C5AD6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StandingDeskTimer/StandingDeskTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = S64Z2T7FXA;
+				INFOPLIST_FILE = StandingDeskTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasonzurita.app.StandingDeskTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1283E76E20C9BC8400C5AD6D /* Build configuration list for PBXProject "StandingDeskTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1283E78120C9BC8600C5AD6D /* Debug */,
+				1283E78220C9BC8600C5AD6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1283E78320C9BC8600C5AD6D /* Build configuration list for PBXNativeTarget "StandingDeskTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1283E78420C9BC8600C5AD6D /* Debug */,
+				1283E78520C9BC8600C5AD6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1283E76B20C9BC8400C5AD6D /* Project object */;
+}
