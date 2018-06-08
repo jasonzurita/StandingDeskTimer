@@ -5,6 +5,11 @@ protocol Coordinator {
     func start()
 }
 
+// TODO: v1 - allow resetting of timer (button + notification)
+// TODO: v2 - silence range (e.g., notifications don't appear between 5pm and 10am)
+// TODO: v2 - icon change based on time to transition
+// TODO: v2 - donations?
+
 final class AppCoordinator: NSObject, Coordinator {
     private let _statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     private let _popover = NSPopover()
@@ -79,12 +84,14 @@ extension AppCoordinator: TimerPopoverVcDelegate {
 
         _timer?.invalidate()
 
+        // TODO: v1 - alert user, via push, that timer is set for x time
         let periodInSeconds = period * 60 * 60
 
         let firstFire = Date(timeInterval: periodInSeconds, since: Date())
         let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [_notificationCenter] _ in
             _notificationCenter.removeAllDeliveredNotifications()
             let notification:NSUserNotification = NSUserNotification()
+            // TODO: v1 - format timestamp for notification
             notification.title = "Your gentle reminder to transition 🤓"
             notification.informativeText = "\(Date())"
             _notificationCenter.scheduleNotification(notification)

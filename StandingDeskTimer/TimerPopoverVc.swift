@@ -31,6 +31,7 @@ final class TimerPopoverVc: NSViewController {
         view.wantsLayer = true
     }
 
+    // TODO: v2 - add countdown label
     override func viewDidLoad() {
         super.viewDidLoad()
 
