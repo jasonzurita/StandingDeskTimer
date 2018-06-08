@@ -25,7 +25,7 @@ final class AppCoordinator: NSObject, Coordinator {
         }
 
         _notificationCenter.delegate = self
-        _popover.contentViewController = TimerPopoverVc()
+        _popover.contentViewController = TimerPopoverVc(delegate: self)
 
         statusButton.image = NSImage(named:NSImage.Name("StatusBarImage")) // this api has recently changed
         statusButton.action = #selector(togglePopover(_:))
@@ -74,5 +74,11 @@ final class AppCoordinator: NSObject, Coordinator {
 extension AppCoordinator: NSUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
         return true
+    }
+}
+
+extension AppCoordinator: TimerPopoverVcDelegate {
+    func quitButtonClicked() {
+        NSApplication.shared.terminate(nil)
     }
 }

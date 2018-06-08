@@ -1,7 +1,13 @@
 import AppKit
 
+protocol TimerPopoverVcDelegate: class {
+    func quitButtonClicked()
+}
+
 final class TimerPopoverVc: NSViewController {
-    init() {
+    private weak var _delegate: TimerPopoverVcDelegate?
+    init(delegate: TimerPopoverVcDelegate) {
+        _delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -14,5 +20,17 @@ final class TimerPopoverVc: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let button = NSButton(title: "Quit app", target: self, action: #selector(quit))
+        view.addSubview(button, constraints: [
+            equal(\.widthAnchor, constant: -20),
+            equal(\.heightAnchor, constant: -20),
+            equal(\.centerXAnchor),
+            equal(\.centerYAnchor),
+            ])
+    }
+
+    @objc func quit() {
+        _delegate?.quitButtonClicked()
     }
 }
