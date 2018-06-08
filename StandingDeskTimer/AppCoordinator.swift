@@ -81,4 +81,8 @@ extension AppCoordinator: TimerPopoverVcDelegate {
     func quitButtonClicked() {
         NSApplication.shared.terminate(nil)
     }
+
+    func periodChanged(to period: Double) {
+        print("New period: \(period)")
+    }
 }
