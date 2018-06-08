@@ -1,12 +1,14 @@
 import AppKit
 
+typealias PeriodInHours = Double
 protocol TimerPopoverVcDelegate: class {
     func quitButtonClicked()
-    func periodChanged(to period: Double)
+    func periodicityChanged(to period: PeriodInHours)
 }
 
 final class TimerPopoverVc: NSViewController {
     private weak var _delegate: TimerPopoverVcDelegate?
+    private let _slider: NSSlider
     private let _textField: NSTextField = {
         let tf = NSTextField()
         tf.isEditable = false
@@ -16,8 +18,9 @@ final class TimerPopoverVc: NSViewController {
         return tf
     }()
 
-    init(delegate: TimerPopoverVcDelegate) {
+    init(delegate: TimerPopoverVcDelegate, initialPeriodicity period: PeriodInHours) {
         _delegate = delegate
+        _slider = NSSlider(value: period, minValue: 0, maxValue: 4, target: nil, action: nil)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -31,16 +34,17 @@ final class TimerPopoverVc: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let slider = NSSlider(value: 1, minValue: 0, maxValue: 4, target: self, action: #selector(sliderValueChanged(sender:)))
+        _slider.target = self
+        _slider.action = #selector(sliderValueChanged(sender:))
 
-        view.addSubview(slider, constraints: [
+        view.addSubview(_slider, constraints: [
             equal(\.widthAnchor, constant: -40),
             equal(\.topAnchor, constant: 15),
             equal(\.centerXAnchor),
             constant(\.widthAnchor, constant: 150),
             ])
 
-        update(textField: _textField, withValue: roundedValue(for: slider))
+        update(textField: _textField, withValue: roundedValue(for: _slider))
 
         view.addSubview(_textField, constraints: [
             equal(\.centerXAnchor),
@@ -53,7 +57,7 @@ final class TimerPopoverVc: NSViewController {
             ])
 
         NSLayoutConstraint.activate([
-            slider.bottomAnchor.constraint(equalTo: _textField.topAnchor),
+            _slider.bottomAnchor.constraint(equalTo: _textField.topAnchor),
             _textField.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -10),
             ])
     }
@@ -67,8 +71,7 @@ final class TimerPopoverVc: NSViewController {
         let didSliderChangingStop = event.type == .leftMouseUp || event.type == .rightMouseUp
         if didSliderChangingStop {
             let value = roundedValue(for: slider)
-            print("slider value stopped changing: \(value)")
-            _delegate?.periodChanged(to: value)
+            _delegate?.periodicityChanged(to: value)
         }
     }
 

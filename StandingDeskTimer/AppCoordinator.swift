@@ -8,9 +8,10 @@ protocol Coordinator {
 final class AppCoordinator: NSObject, Coordinator {
     private let _statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     private let _popover = NSPopover()
-    private let _oneHourInSeconds: TimeInterval = 60 * 60
+    private let _initialPeriod: PeriodInHours = 1
     private let _eventMonitor: EventMonitor
     private let _notificationCenter: NSUserNotificationCenter
+    private weak var _timer: Timer?
 
     init(eventMonitor: EventMonitor, notificationCenter: NSUserNotificationCenter = .default) {
         _eventMonitor = eventMonitor
@@ -25,22 +26,13 @@ final class AppCoordinator: NSObject, Coordinator {
         }
 
         _notificationCenter.delegate = self
-        _popover.contentViewController = TimerPopoverVc(delegate: self)
+        _popover.contentViewController = TimerPopoverVc(delegate: self, initialPeriodicity: _initialPeriod)
 
         statusButton.image = NSImage(named:NSImage.Name("StatusBarImage")) // this api has recently changed
         statusButton.action = #selector(togglePopover(_:))
         statusButton.target = self
 
-        let firstFire = Date(timeInterval: _oneHourInSeconds, since: Date())
-        let timer = Timer(fire: firstFire, interval: _oneHourInSeconds, repeats: true) { [_notificationCenter] _ in
-            _notificationCenter.removeAllDeliveredNotifications()
-            let notification:NSUserNotification = NSUserNotification()
-            notification.title = "Standing desk reminder!"
-            notification.informativeText = "Time to transition"
-            _notificationCenter.scheduleNotification(notification)
-        }
-        let runLoop = RunLoop.current
-        runLoop.add(timer, forMode: .defaultRunLoopMode)
+        periodicityChanged(to: _initialPeriod)
     }
 
     deinit {
@@ -82,7 +74,23 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         NSApplication.shared.terminate(nil)
     }
 
-    func periodChanged(to period: Double) {
-        print("New period: \(period)")
+    func periodicityChanged(to period: PeriodInHours) {
+        print("New period: \(period) hours")
+
+        _timer?.invalidate()
+
+        let periodInSeconds = period * 60 * 60
+
+        let firstFire = Date(timeInterval: periodInSeconds, since: Date())
+        let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [_notificationCenter] _ in
+            _notificationCenter.removeAllDeliveredNotifications()
+            let notification:NSUserNotification = NSUserNotification()
+            notification.title = "Standing desk reminder!"
+            notification.informativeText = "Time to transition"
+            _notificationCenter.scheduleNotification(notification)
+        }
+        let runLoop = RunLoop.current
+        runLoop.add(timer, forMode: .defaultRunLoopMode)
+        _timer = timer
     }
 }
