@@ -85,8 +85,8 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [_notificationCenter] _ in
             _notificationCenter.removeAllDeliveredNotifications()
             let notification:NSUserNotification = NSUserNotification()
-            notification.title = "Standing desk reminder!"
-            notification.informativeText = "Time to transition"
+            notification.title = "Your gentle reminder to transition 🤓"
+            notification.informativeText = "\(Date())"
             _notificationCenter.scheduleNotification(notification)
         }
         let runLoop = RunLoop.current
