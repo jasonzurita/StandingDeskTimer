@@ -82,7 +82,8 @@ final class TimerPopoverVc: NSViewController {
     }
 
     private func update(textField: NSTextField, withValue value: Double) {
-        textField.stringValue = "every \(value) hours"
+        let hourString = value == 1 ? "hour" : "hours"
+        textField.stringValue = "(every \(value) \(hourString))"
     }
 
     @objc func quit() {

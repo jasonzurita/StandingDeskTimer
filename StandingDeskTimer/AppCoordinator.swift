@@ -100,7 +100,8 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         df.dateFormat = "h:m a"
         let time = df.string(from: Date(timeIntervalSinceNow: periodInSeconds))
         
-        sendPush(title: "⏰ Updated to every \(period) hours", body: "Next alert set for \(time)")
+        let hourString = period == 1 ? "hour" : "hours"
+        sendPush(title: "⏰ Updated to every \(period) \(hourString)", body: "Next alert set for \(time)")
 
         let firstFire = Date(timeInterval: periodInSeconds, since: Date())
         let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [unowned self] _ in
