@@ -13,7 +13,7 @@ final class TimerPopoverVc: NSViewController {
         let tf = NSTextField()
         tf.isEditable = false
         tf.drawsBackground = false
-        tf.font = NSFont.systemFont(ofSize: 16)
+        tf.font = NSFont.systemFont(ofSize: 14)
         tf.isBordered = false
         return tf
     }()
