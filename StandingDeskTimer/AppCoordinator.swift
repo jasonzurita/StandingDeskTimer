@@ -94,10 +94,13 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         print("New period: \(period) hours")
 
         _timer?.invalidate()
-
-        sendPush(title: "⏰ Updated ", body: "You will be reminded every \(period) hours")
-
         let periodInSeconds = period * 60 * 60
+        
+        let df = DateFormatter()
+        df.dateFormat = "h:m a"
+        let time = df.string(from: Date(timeIntervalSinceNow: periodInSeconds))
+        
+        sendPush(title: "⏰ Updated to every \(period) hours", body: "Next alert set for \(time)")
 
         let firstFire = Date(timeInterval: periodInSeconds, since: Date())
         let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [unowned self] _ in
