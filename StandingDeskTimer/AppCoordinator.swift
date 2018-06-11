@@ -94,8 +94,8 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         print("New period: \(period) hours")
 
         _timer?.invalidate()
-        
-        sendPush(title: "Timer updated!", body: "You will be reminded every \(period) hours")
+
+        sendPush(title: "⏰ Updated ", body: "You will be reminded every \(period) hours")
 
         let periodInSeconds = period * 60 * 60
 
