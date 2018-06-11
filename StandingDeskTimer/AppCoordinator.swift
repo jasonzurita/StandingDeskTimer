@@ -66,6 +66,17 @@ final class AppCoordinator: NSObject, Coordinator {
             _popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
         }
     }
+    
+    private func sendPush(title: String, body: String) {
+
+        _notificationCenter.removeAllDeliveredNotifications()
+        
+        let notification = NSUserNotification()
+        notification.title = title
+        notification.informativeText = body
+        
+        _notificationCenter.scheduleNotification(notification)
+    }
 }
 
 extension AppCoordinator: NSUserNotificationCenterDelegate {
@@ -83,18 +94,15 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         print("New period: \(period) hours")
 
         _timer?.invalidate()
+        
+        sendPush(title: "Timer updated!", body: "You will be reminded every \(period) hours")
 
-        // TODO: v1 - alert user, via push, that timer is set for x time
         let periodInSeconds = period * 60 * 60
 
         let firstFire = Date(timeInterval: periodInSeconds, since: Date())
-        let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [_notificationCenter] _ in
-            _notificationCenter.removeAllDeliveredNotifications()
-            let notification:NSUserNotification = NSUserNotification()
+        let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [unowned self] _ in
             // TODO: v1 - format timestamp for notification
-            notification.title = "Your gentle reminder to transition 🤓"
-            notification.informativeText = "\(Date())"
-            _notificationCenter.scheduleNotification(notification)
+            self.sendPush(title: "Your gentle reminder to transition 🤓", body: "\(Date())")
         }
         let runLoop = RunLoop.current
         runLoop.add(timer, forMode: .defaultRunLoopMode)
