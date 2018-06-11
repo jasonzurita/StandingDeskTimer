@@ -6,9 +6,15 @@ protocol Coordinator {
 }
 
 // TODO: v1 - allow resetting of timer (button + notification)
+// TODO: v1 - app icon
+// TODO: v2 - save last selected timer period
+// TODO: v2 - add link to this project when open sourced
+// TODO: v2 - CI/CD, Travis?
+// TODO: v2 - chaning status icon when timer changes
 // TODO: v2 - silence range (e.g., notifications don't appear between 5pm and 10am)
 // TODO: v2 - icon change based on time to transition
 // TODO: v2 - donations?
+// TODO: v2 - start at login
 
 final class AppCoordinator: NSObject, Coordinator {
     private let _statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
