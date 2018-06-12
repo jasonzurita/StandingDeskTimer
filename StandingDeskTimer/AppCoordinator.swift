@@ -6,7 +6,6 @@ protocol Coordinator {
 }
 
 // TODO: v1 - allow resetting of timer (button + notification)
-// TODO: v1 - app icon
 // TODO: v2 - save last selected timer period
 // TODO: v2 - add link to this project when open sourced
 // TODO: v2 - CI/CD, Travis?
