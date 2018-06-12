@@ -39,7 +39,7 @@ final class AppCoordinator: NSObject, Coordinator {
         _notificationCenter.delegate = self
         _popover.contentViewController = TimerPopoverVc(delegate: self, initialPeriodicity: _initialPeriod)
 
-        statusButton.image = NSImage(named:NSImage.Name("StatusBarImage")) // this api has recently changed
+        statusButton.image = NSImage(named:NSImage.Name("StatusBarImage1")) // this api has recently changed
         statusButton.action = #selector(togglePopover(_:))
         statusButton.target = self
 
