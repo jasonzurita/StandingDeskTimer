@@ -5,7 +5,7 @@ protocol Coordinator {
     func start()
 }
 
-// TODO: v1 - allow resetting of timer (button + notification)
+// TODO: v2 - allow resetting of timer (button + notification)
 // TODO: v2 - save last selected timer period
 // TODO: v2 - add link to this project when open sourced
 // TODO: v2 - CI/CD, Travis?
