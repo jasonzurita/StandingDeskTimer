@@ -102,7 +102,7 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         let periodInSeconds = period * 60 * 60
         
         let df = DateFormatter()
-        df.dateFormat = "h:m a"
+        df.dateFormat = "h:mm a"
         let time = df.string(from: Date(timeIntervalSinceNow: periodInSeconds))
         
         let hourString = period == 1 ? "hour" : "hours"
