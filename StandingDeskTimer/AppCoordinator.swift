@@ -26,7 +26,6 @@ final class AppCoordinator: NSObject, Coordinator {
         _eventMonitor = eventMonitor
         _notificationCenter = notificationCenter
         super.init()
-
     }
 
     func start() {
@@ -35,7 +34,9 @@ final class AppCoordinator: NSObject, Coordinator {
         }
 
         _notificationCenter.delegate = self
-        _popover.contentViewController = TimerPopoverVc(delegate: self, initialPeriodicity: _initialPeriod)
+        _popover.contentViewController = TimerPopoverVc(delegate: self,
+                                                        dataSource: self,
+                                                        initialPeriodicity: _initialPeriod)
 
         statusButton.image = NSImage(named:NSImage.Name("StatusBarImage1")) // this api has recently changed
         statusButton.action = #selector(togglePopover(_:))
@@ -117,5 +118,12 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         let runLoop = RunLoop.current
         runLoop.add(timer, forMode: .defaultRunLoopMode)
         _timer = timer
+    }
+}
+
+extension AppCoordinator: TimerPopoverVcDataSource {
+    func timeLeftUntilReminder() -> TimeInterval {
+        guard let fireDate = _timer?.fireDate else { return 0 }
+        return fireDate.timeIntervalSinceNow
     }
 }
