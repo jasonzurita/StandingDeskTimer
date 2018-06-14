@@ -5,7 +5,6 @@ protocol Coordinator {
     func start()
 }
 
-// TODO: v2 - save last selected timer period
 // TODO: v2 - add link to this project when open sourced
 // TODO: v2 - CI/CD, Travis?
 // TODO: v2 - chaning status icon when timer changes
@@ -17,7 +16,11 @@ protocol Coordinator {
 final class AppCoordinator: NSObject, Coordinator {
     private let _statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     private let _popover = NSPopover()
-    private let _initialPeriod: PeriodInHours = 1
+    private static let _storedPeriodKey = "storedPeriodKey"
+    private let _initialPeriod: PeriodInHours = {
+        let storedPeriod: PeriodInHours = UserDefaults.standard.double(forKey: _storedPeriodKey)
+        return storedPeriod > 0 ? storedPeriod : 1
+    }()
     private let _eventMonitor: EventMonitor
     private let _notificationCenter: NSUserNotificationCenter
     private weak var _timer: Timer?
@@ -98,6 +101,8 @@ extension AppCoordinator: TimerPopoverVcDelegate {
     func periodicityChanged(to period: PeriodInHours) {
         print("New period: \(period) hours")
 
+        UserDefaults.standard.set(period, forKey: AppCoordinator._storedPeriodKey)
+        
         _timer?.invalidate()
         let periodInSeconds = period * 60 * 60
         
