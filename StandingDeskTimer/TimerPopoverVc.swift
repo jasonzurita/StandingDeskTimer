@@ -35,32 +35,36 @@ final class TimerPopoverVc: NSViewController {
     // TODO: v2 - add countdown label
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let quitButton = NSButton(title: "Quit", target: self, action: #selector(quit))
+        let resetButton = NSButton(title: "Reset", target: self, action: #selector(reset))
+        
+        let stackView = NSStackView(views: [quitButton, resetButton])
+        stackView.orientation = .horizontal
+        stackView.distribution = .equalCentering
+        view.addSubview(stackView, constraints: [
+            equal(\.topAnchor, constant: 10),
+            equal(\.centerXAnchor),
+            constant(\.widthAnchor, constant: 150),
+            equal(\.widthAnchor, constant: -40),
+            ])
 
         _slider.target = self
         _slider.action = #selector(sliderValueChanged(sender:))
-
         view.addSubview(_slider, constraints: [
-            equal(\.widthAnchor, constant: -40),
-            equal(\.topAnchor, constant: 15),
             equal(\.centerXAnchor),
-            constant(\.widthAnchor, constant: 150),
             ])
 
         update(textField: _textField, withValue: roundedValue(for: _slider))
-
         view.addSubview(_textField, constraints: [
-            equal(\.centerXAnchor),
-            ])
-
-        let button = NSButton(title: "Quit", target: self, action: #selector(quit))
-        view.addSubview(button, constraints: [
             equal(\.centerXAnchor),
             equal(\.bottomAnchor, constant: -10),
             ])
 
         NSLayoutConstraint.activate([
+            stackView.bottomAnchor.constraint(equalTo: _slider.topAnchor, constant: -10),
+            _slider.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             _slider.bottomAnchor.constraint(equalTo: _textField.topAnchor),
-            _textField.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -10),
             ])
     }
 
@@ -89,5 +93,10 @@ final class TimerPopoverVc: NSViewController {
 
     @objc func quit() {
         _delegate?.quitButtonClicked()
+    }
+    
+    @objc func reset() {
+        let value = roundedValue(for: _slider)
+        _delegate?.periodicityChanged(to: value)
     }
 }
