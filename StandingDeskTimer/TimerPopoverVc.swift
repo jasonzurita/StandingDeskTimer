@@ -52,7 +52,7 @@ final class TimerPopoverVc: NSViewController {
             equal(\.centerXAnchor),
             ])
 
-        let button = NSButton(title: "Quit app", target: self, action: #selector(quit))
+        let button = NSButton(title: "Quit", target: self, action: #selector(quit))
         view.addSubview(button, constraints: [
             equal(\.centerXAnchor),
             equal(\.bottomAnchor, constant: -10),
