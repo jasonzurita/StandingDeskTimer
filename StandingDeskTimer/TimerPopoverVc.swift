@@ -39,7 +39,7 @@ final class TimerPopoverVc: NSViewController {
          initialPeriodicity period: PeriodInHours) {
         _delegate = delegate
         _dataSource = dataSource
-        _slider = NSSlider(value: period, minValue: 0, maxValue: 4, target: nil, action: nil)
+        _slider = NSSlider(value: period, minValue: 0.1, maxValue: 4, target: nil, action: nil)
         super.init(nibName: nil, bundle: nil)
     }
 
