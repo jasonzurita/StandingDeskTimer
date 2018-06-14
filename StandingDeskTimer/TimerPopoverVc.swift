@@ -13,7 +13,8 @@ final class TimerPopoverVc: NSViewController {
         let tf = NSTextField()
         tf.isEditable = false
         tf.drawsBackground = false
-        tf.font = NSFont.systemFont(ofSize: 14)
+        tf.alignment = .center
+        tf.font = NSFont.systemFont(ofSize: 12)
         tf.isBordered = false
         return tf
     }()
@@ -83,7 +84,7 @@ final class TimerPopoverVc: NSViewController {
 
     private func update(textField: NSTextField, withValue value: Double) {
         let hourString = value == 1 ? "hour" : "hours"
-        textField.stringValue = "(every \(value) \(hourString))"
+        textField.stringValue = "Reminder every \(value) \(hourString)"
     }
 
     @objc func quit() {
