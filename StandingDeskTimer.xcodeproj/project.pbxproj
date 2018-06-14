@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1208C9BC20D2944300152D19 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1208C9BB20D2944300152D19 /* DoubleExtensions.swift */; };
 		1228F92D20CB0BC9004D6C27 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228F92C20CB0BC8004D6C27 /* Layout.swift */; };
 		1283E77720C9BC8400C5AD6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283E77620C9BC8400C5AD6D /* AppDelegate.swift */; };
 		1283E77B20C9BC8600C5AD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1283E77A20C9BC8600C5AD6D /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1208C9BB20D2944300152D19 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		1228F92C20CB0BC8004D6C27 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		1283E77320C9BC8400C5AD6D /* StandingDeskTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandingDeskTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1283E77620C9BC8400C5AD6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				1228F92C20CB0BC8004D6C27 /* Layout.swift */,
+				1208C9BB20D2944300152D19 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				1283E78920C9D2A300C5AD6D /* EventMonitor.swift in Sources */,
 				1283E77720C9BC8400C5AD6D /* AppDelegate.swift in Sources */,
 				1228F92D20CB0BC9004D6C27 /* Layout.swift in Sources */,
+				1208C9BC20D2944300152D19 /* DoubleExtensions.swift in Sources */,
 				1283E78720C9C74400C5AD6D /* TimerPopoverVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
