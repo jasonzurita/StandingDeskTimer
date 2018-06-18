@@ -118,7 +118,7 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         let firstFire = Date(timeInterval: periodInSeconds, since: Date())
         let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [unowned self] _ in
             let df = DateFormatter()
-            df.dateFormat = "h:m a"
+            df.dateFormat = "h:mm a"
             let time = df.string(from: Date(timeIntervalSinceNow: periodInSeconds))
             self.sendPush(title: "Your gentle reminder to transition 🤓", body: "Next alert set for: \(time)")
         }
