@@ -6,7 +6,6 @@ protocol Coordinator {
 }
 
 // TODO: v2 - add link to this project when open sourced
-// TODO: v2 - CI/CD, Travis?
 // TODO: v2 - chaning status icon when timer changes
 // TODO: v2 - silence range (e.g., notifications don't appear between 5pm and 10am)
 // TODO: v2 - icon change based on time to transition
