@@ -82,7 +82,9 @@ final class AppCoordinator: NSObject, Coordinator {
         let notification = NSUserNotification()
         notification.title = title
         notification.informativeText = body
-        
+        notification.hasActionButton = false
+        notification.otherButtonTitle = "Okay"
+
         _notificationCenter.scheduleNotification(notification)
     }
 }
