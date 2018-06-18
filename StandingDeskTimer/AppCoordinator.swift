@@ -75,17 +75,28 @@ final class AppCoordinator: NSObject, Coordinator {
         }
     }
     
-    private func sendPush(title: String, body: String) {
-
+    private func sendTemporaryPush(notification: NSUserNotification, duration: Double = 5) {
         _notificationCenter.removeAllDeliveredNotifications()
-        
+        DispatchQueue
+            .main
+            .asyncAfter(deadline: DispatchTime.now() + duration) { [weak _notificationCenter] in
+            _notificationCenter?.removeDeliveredNotification(notification)
+        }
+        _notificationCenter.scheduleNotification(notification)
+    }
+    
+    private func sendPersistentNotification(notification: NSUserNotification) {
+        _notificationCenter.removeAllDeliveredNotifications()
+        _notificationCenter.scheduleNotification(notification)
+    }
+    
+    private func createNotification(title: String, body: String) -> NSUserNotification {
         let notification = NSUserNotification()
         notification.title = title
         notification.informativeText = body
         notification.hasActionButton = false
         notification.otherButtonTitle = "Okay"
-
-        _notificationCenter.scheduleNotification(notification)
+        return notification
     }
 }
 
@@ -113,14 +124,22 @@ extension AppCoordinator: TimerPopoverVcDelegate {
         let time = df.string(from: Date(timeIntervalSinceNow: periodInSeconds))
         
         let hourString = period == 1 ? "hour" : "hours"
-        sendPush(title: "⏰ Updated to every \(period) \(hourString)", body: "Next alert set for \(time)")
+        let notification = createNotification(
+            title: "⏰ Updated to every \(period) \(hourString)",
+            body: "Next alert set for \(time)"
+        )
+        sendTemporaryPush(notification: notification)
 
         let firstFire = Date(timeInterval: periodInSeconds, since: Date())
         let timer = Timer(fire: firstFire, interval: periodInSeconds, repeats: true) { [unowned self] _ in
             let df = DateFormatter()
             df.dateFormat = "h:mm a"
             let time = df.string(from: Date(timeIntervalSinceNow: periodInSeconds))
-            self.sendPush(title: "Your gentle reminder to transition 🤓", body: "Next alert set for: \(time)")
+            let notification = self.createNotification(
+                title: "Your gentle reminder to transition 🤓",
+                body: "Next alert set for: \(time)"
+            )
+            self.sendPersistentNotification(notification: notification)
         }
         let runLoop = RunLoop.current
         runLoop.add(timer, forMode: .defaultRunLoopMode)
