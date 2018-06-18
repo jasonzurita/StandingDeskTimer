@@ -11,6 +11,7 @@ protocol Coordinator {
 // TODO: v2 - icon change based on time to transition
 // TODO: v2 - donations?
 // TODO: v2 - start at login
+// TODO: v2 - provide `show` in the alert to show user stats about their sitting/standing activity
 
 final class AppCoordinator: NSObject, Coordinator {
     private let _statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
