@@ -5,13 +5,26 @@ protocol Coordinator {
     func start()
 }
 
-// TODO: v2 - add link to this project when open sourced
-// TODO: v2 - chaning status icon when timer changes
-// TODO: v2 - silence range (e.g., notifications don't appear between 5pm and 10am)
-// TODO: v2 - icon change based on time to transition
-// TODO: v2 - donations?
+// To get the app in the app store
+// TODO: make this app also functional with stand alone window (not totally dependent on notifications) (per Apple review)
+// TODO: Add a random stretching image to when the timer fires (to make the app more useful and to hopefully satisfy Apple's review)
+
+// Beginner tasks
 // TODO: v2 - start at login
+// TODO: v2 - change timer countdown to reflect slider change
+// TODO: v2 - Slider for how "push" you want the reminder text to be
+// TODO: v2 - maybe add different quotes for the reminder notifications?
+// TODO: v2 - add ability to back add some time because you went to a meeting or w/e
+
+// Intermediate tasks
+// TODO: v2 - changing status icon when timer changes (from dark icon to light)
+// TODO: v2 - silence range (e.g., notifications don't appear between 5pm and 10am)
+// TODO: v2 - donations?
 // TODO: v2 - provide `show` in the alert to show user stats about their sitting/standing activity
+
+// Other tasks
+// TODO: move these todos to github
+// TODO: add link to this project when open sourced
 
 final class AppCoordinator: NSObject, Coordinator {
     private let _statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
