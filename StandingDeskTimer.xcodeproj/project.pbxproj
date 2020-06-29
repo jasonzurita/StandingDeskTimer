@@ -110,7 +110,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = zurita;
 				TargetAttributes = {
 					1283E77220C9BC8400C5AD6D = {
@@ -304,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S64Z2T7FXA;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = StandingDeskTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -327,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S64Z2T7FXA;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = StandingDeskTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
