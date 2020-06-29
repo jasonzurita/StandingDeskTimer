@@ -115,6 +115,7 @@
 				TargetAttributes = {
 					1283E77220C9BC8400C5AD6D = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1150;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -313,7 +314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -336,7 +337,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

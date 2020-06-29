@@ -63,7 +63,7 @@ final class TimerPopoverVc: NSViewController {
             strongSelf.update(timerTextField: strongSelf._timerTextField)
         }
         let runLoop = RunLoop.current
-        runLoop.add(timer, forMode: .defaultRunLoopMode)
+        runLoop.add(timer, forMode: RunLoop.Mode.default)
         _timer = timer
     }
 

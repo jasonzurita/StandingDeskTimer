@@ -54,7 +54,7 @@ final class AppCoordinator: NSObject, Coordinator {
                                                         dataSource: self,
                                                         initialPeriodicity: _initialPeriod)
 
-        statusButton.image = NSImage(named:NSImage.Name("StatusBarImage1")) // this api has recently changed
+        statusButton.image = NSImage(named:"StatusBarImage1") // this api has recently changed
         statusButton.action = #selector(togglePopover(_:))
         statusButton.target = self
 
@@ -155,7 +155,7 @@ extension AppCoordinator: TimerPopoverVcDelegate {
             self.sendPersistentNotification(notification: notification)
         }
         let runLoop = RunLoop.current
-        runLoop.add(timer, forMode: .defaultRunLoopMode)
+        runLoop.add(timer, forMode: RunLoop.Mode.default)
         _timer = timer
     }
 }
